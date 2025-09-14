@@ -1,0 +1,33 @@
+# Unity generated files
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+
+# Asset Store packages  
+[Aa]ssets/AssetStoreTools*
+
+# Visual Studio files
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Unity3D generated meta files
+*.pidb.meta
+*.pdb.meta  
+*.mdb.meta
+
+# Builds
+*.apk
+*.unitypackage
+*.app
