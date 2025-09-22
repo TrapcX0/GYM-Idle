@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 87c3d72c196f4e6458c75c276b437d03
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - standPrefab: {fileID: 3419695617852785821, guid: 4b2b1ab59bca3574d8859f2a1b2fd55e,
+      type: 3}
+  - transformSound: {fileID: 8300000, guid: 3dcd8f8c894e88c4fa0e6c0cdda28ca9, type: 3}
+  - boxAnimator: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
