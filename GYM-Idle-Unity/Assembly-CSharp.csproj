@@ -67,6 +67,8 @@
   <ItemGroup>
     <Compile Include="Assets\animator.cs" />
     <Compile Include="Assets\Script\BoxClick.cs" />
+    <Compile Include="Assets\Script\GameManager.cs" />
+    <Compile Include="Assets\Script\SimpleCustomerAI.cs" />
     <Compile Include="Assets\Mini Simple Characters Demo\Readme\Scripts\Readme.cs" />
     <Compile Include="Assets\Script\CameraController.cs" />
   </ItemGroup>
