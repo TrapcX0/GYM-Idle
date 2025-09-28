@@ -2050,19 +2050,13 @@ Transform:
   m_Children:
   - {fileID: 2029993244}
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
   - {fileID: 616293821}
 =======
-=======
->>>>>>> Stashed changes
 <<<<<<< HEAD
   - {fileID: 1836435922}
 =======
   - {fileID: 616293821}
 >>>>>>> 99db37c8f1b66b9435eb4df56e8cfeb20db6e0b1
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
   - {fileID: 677843968}
   - {fileID: 1166038827}
@@ -4592,19 +4586,13 @@ Transform:
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 --- !u!1 &902955137
 =======
-=======
->>>>>>> Stashed changes
 <<<<<<< HEAD
 --- !u!1 &837094498
 =======
 --- !u!1 &902955137
 >>>>>>> 99db37c8f1b66b9435eb4df56e8cfeb20db6e0b1
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
@@ -4614,13 +4602,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
   - component: {fileID: 902955138}
   m_Layer: 0
   m_Name: Characters
 =======
-=======
->>>>>>> Stashed changes
 <<<<<<< HEAD
   - component: {fileID: 837094499}
   m_Layer: 0
@@ -4630,9 +4615,6 @@ GameObject:
   m_Layer: 0
   m_Name: Characters
 >>>>>>> 99db37c8f1b66b9435eb4df56e8cfeb20db6e0b1
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4640,19 +4622,13 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 --- !u!4 &902955138
 =======
-=======
->>>>>>> Stashed changes
 <<<<<<< HEAD
 --- !u!4 &837094499
 =======
 --- !u!4 &902955138
 >>>>>>> 99db37c8f1b66b9435eb4df56e8cfeb20db6e0b1
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
 Transform:
   m_ObjectHideFlags: 0
@@ -4660,10 +4636,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 =======
-=======
->>>>>>> Stashed changes
 <<<<<<< HEAD
   m_GameObject: {fileID: 837094498}
   serializedVersion: 2
@@ -5037,9 +5010,6 @@ MeshFilter:
   m_GameObject: {fileID: 918846522}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 =======
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
   m_GameObject: {fileID: 902955137}
   serializedVersion: 2
@@ -5054,10 +5024,6 @@ MeshFilter:
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
->>>>>>> 99db37c8f1b66b9435eb4df56e8cfeb20db6e0b1
->>>>>>> Stashed changes
 =======
 >>>>>>> 99db37c8f1b66b9435eb4df56e8cfeb20db6e0b1
 >>>>>>> Stashed changes
