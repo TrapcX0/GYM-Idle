@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 4325759856330135994}
   m_Layer: 0
   m_Name: LegPressParent
-  m_TagString: Untagged
+  m_TagString: Machine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
