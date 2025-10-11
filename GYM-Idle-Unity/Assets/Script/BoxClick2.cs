@@ -61,7 +61,7 @@ public class BoxClick2 : MonoBehaviour
         }
         else
         {
-            spawnPos.y = groundY + 0.08f; // collider yoksa tahmini değer
+            spawnPos.y = groundY + 0.05f; // collider yoksa tahmini değer
         }
 
         GameObject spawned = Instantiate(benchSetPrefab, spawnPos, Quaternion.identity);

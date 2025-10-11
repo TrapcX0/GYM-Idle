@@ -834,7 +834,7 @@ GameObject:
   - component: {fileID: -2411037780202252703}
   m_Layer: 0
   m_Name: BenchPress 1
-  m_TagString: Untagged
+  m_TagString: Machine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

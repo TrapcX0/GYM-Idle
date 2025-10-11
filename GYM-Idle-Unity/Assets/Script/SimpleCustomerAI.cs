@@ -5,6 +5,7 @@ using System.Collections.Generic; // ✅ Liste için eklendi
 
 public class SimpleCustomerAI : MonoBehaviour
 {
+    public Transform targetPoint; // karakterin ilk gideceği hedef
     public float membershipFee = 15f;       // giriş ücreti
     public float workoutTime = 3f;         // alette çalışma süresi
 
@@ -31,7 +32,8 @@ public class SimpleCustomerAI : MonoBehaviour
     IEnumerator CustomerRoutine()
     {
         // 1. Merkeze git
-        yield return MoveToPoint(Vector3.zero, 2f);
+        if (targetPoint != null)
+            yield return MoveToPoint(targetPoint.position, 2f);
 
         // 2. Para öde
         PayMoney();
@@ -45,11 +47,11 @@ public class SimpleCustomerAI : MonoBehaviour
                 Debug.Log($"{gameObject.name} artık çalışacak alet bulamadı, salonu terk ediyor!");
                 // ✅ Çıkış noktasına git (örnek: salonun kapısı)
                 yield return MoveToPoint(new Vector3(0, 0, 25f), 0f);
-                
+
                 yield return MoveToPoint(new Vector3(20f, 0, 21f), 0f);
 
-                 Destroy(gameObject);
-               
+                Destroy(gameObject);
+
                 yield break; // coroutine’i bitir
             }
 
@@ -80,7 +82,7 @@ public class SimpleCustomerAI : MonoBehaviour
 
         if (GameManager.Instance != null)
         {
-            GameManager.Instance.AddMoney(membershipFee); 
+            GameManager.Instance.AddMoney(membershipFee);
         }
     }
 
