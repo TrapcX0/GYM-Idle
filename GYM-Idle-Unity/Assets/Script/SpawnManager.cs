@@ -8,7 +8,7 @@ public class SpawnManager : MonoBehaviour
     public Transform spawnPoint; // Karakterlerin çıkacağı nokta
     public GameObject[] customerPrefabs; // Karakter prefabları
     public float spawnInterval = 5f; // Spawn aralığı (saniye)
-    public int maxActiveCustomers = 10; // Aynı anda sahnede bulunacak maksimum müşteri
+    public int maxActiveCustomers = 7; // Aynı anda sahnede bulunacak maksimum müşteri
 
     private List<GameObject> activeCustomers = new List<GameObject>();
 
