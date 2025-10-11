@@ -2079,7 +2079,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 0.5, y: 0.5, z: 0.5}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
@@ -4677,7 +4677,7 @@ Transform:
   m_GameObject: {fileID: 902955137}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.482, y: 0.93836033, z: -6.41}
+  m_LocalPosition: {x: -19.74, y: 0.93836033, z: 15.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5492,6 +5492,57 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 995700676}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1027215634
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1027215636}
+  - component: {fileID: 1027215635}
+  m_Layer: 0
+  m_Name: SpawnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1027215635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027215634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5a1e19dec501494f834965e96863358, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 1027215636}
+  customerPrefabs:
+  - {fileID: 4559810857755219763}
+  - {fileID: 8884552186343663543}
+  - {fileID: 4848631518666210416}
+  spawnInterval: 5
+  maxActiveCustomers: 10
+--- !u!4 &1027215636
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027215634}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -19.065, y: 0.132, z: 24.000593}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1031219381
 GameObject:
   m_ObjectHideFlags: 0
@@ -6672,6 +6723,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1379710079}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1418646964
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1418646965}
+  m_Layer: 0
+  m_Name: CustomerTargetPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1418646965
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418646964}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.968, y: 1.215, z: 9.642}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1441357832
 GameObject:
   m_ObjectHideFlags: 0
@@ -8486,8 +8568,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4848631518666210416}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5487747, y: -0.93836033, z: 4.696572}
+  m_LocalRotation: {x: -0, y: 0.7556333, z: -0, w: 0.65499496}
+  m_LocalPosition: {x: 1.13, y: -0.93836033, z: 6.94}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8504,7 +8586,7 @@ Transform:
   - {fileID: 3017955127583779679}
   - {fileID: 2951995094909826351}
   m_Father: {fileID: 902955138}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 98.161, z: 0}
 --- !u!1 &418948580958789814
 GameObject:
   m_ObjectHideFlags: 0
@@ -10006,8 +10088,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8884552186343663543}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.63, y: -0.93836033, z: 4.696572}
+  m_LocalRotation: {x: -0, y: 0.6819898, z: -0, w: 0.7313617}
+  m_LocalPosition: {x: 1.059803, y: -0.93836033, z: 9.729807}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10024,7 +10106,7 @@ Transform:
   - {fileID: 1195262796797162027}
   - {fileID: 2389601233600547555}
   m_Father: {fileID: 902955138}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 85.999, z: 0}
 --- !u!1 &1424692414409192303
 GameObject:
   m_ObjectHideFlags: 0
@@ -15166,6 +15248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ba4295ea8e1164fbd2c78ff24d84e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetPoint: {fileID: 1418646965}
   membershipFee: 15
   workoutTime: 5
 --- !u!195 &4848631518666210418
@@ -18367,8 +18450,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4559810857755219763}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.19, y: -0.93836033, z: 4.696572}
+  m_LocalRotation: {x: -0, y: 0.7152223, z: -0, w: 0.6988971}
+  m_LocalPosition: {x: 1.81, y: -0.93836033, z: 8.34}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18386,7 +18469,7 @@ Transform:
   - {fileID: 7376834837748261882}
   - {fileID: 3308848000975956492}
   m_Father: {fileID: 902955138}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 91.323, z: 0}
 --- !u!1 &7122986341990508830
 GameObject:
   m_ObjectHideFlags: 0
@@ -20592,6 +20675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ba4295ea8e1164fbd2c78ff24d84e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetPoint: {fileID: 1418646965}
   membershipFee: 15
   workoutTime: 5
 --- !u!1 &8814094929019862076
@@ -20910,6 +20994,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ba4295ea8e1164fbd2c78ff24d84e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetPoint: {fileID: 1418646965}
   membershipFee: 15
   workoutTime: 5
 --- !u!195 &8884552186343663545
@@ -21283,3 +21368,5 @@ SceneRoots:
   - {fileID: 6122530295844937527}
   - {fileID: 95352022}
   - {fileID: 552801929}
+  - {fileID: 1027215636}
+  - {fileID: 1418646965}
