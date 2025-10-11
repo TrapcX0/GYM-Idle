@@ -1,15 +1,18 @@
 using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
+using System.Collections.Generic; // ✅ Liste için eklendi
 
 public class SimpleCustomerAI : MonoBehaviour
 {
     public float membershipFee = 15f;       // giriş ücreti
-    public float workoutTime = 10f;         // alette çalışma süresi
-    public float moneyPerSecond = 2f;       // saniye başına kazanılacak para
+    public float workoutTime = 3f;         // alette çalışma süresi
 
     private NavMeshAgent agent;
     private Animator animator;
+
+    // ✅ Kullanılan aletleri hatırlamak için liste
+    private List<Transform> usedMachines = new List<Transform>();
 
     void Start()
     {
@@ -18,7 +21,7 @@ public class SimpleCustomerAI : MonoBehaviour
 
         if (agent == null)
         {
-            Debug.LogError("NavMesh Agent component bulunamadı!");
+            Debug.LogError("NavMesh Agent component bulunamadi!");
             return;
         }
 
@@ -39,9 +42,15 @@ public class SimpleCustomerAI : MonoBehaviour
             Transform machine = GetRandomMachine();
             if (machine == null)
             {
-                Debug.LogWarning("Hiç ekipman bulunamadı!");
-                yield return new WaitForSeconds(2f);
-                continue;
+                Debug.Log($"{gameObject.name} artık çalışacak alet bulamadı, salonu terk ediyor!");
+                // ✅ Çıkış noktasına git (örnek: salonun kapısı)
+                yield return MoveToPoint(new Vector3(0, 0, 25f), 0f);
+                
+                yield return MoveToPoint(new Vector3(20f, 0, 21f), 0f);
+
+                 Destroy(gameObject);
+               
+                yield break; // coroutine’i bitir
             }
 
             // Aletin yanına git
@@ -53,19 +62,9 @@ public class SimpleCustomerAI : MonoBehaviour
             animator.SetBool("isWorkingOut", true);
 
             Debug.Log($"{gameObject.name} {machine.name} aletinde çalışmaya başladı!");
-            float elapsed = 0f;
 
-            while (elapsed < workoutTime)
-            {
-                elapsed += Time.deltaTime;
-
-                if (GameManager.Instance != null)
-                {
-                    GameManager.Instance.AddMoney(moneyPerSecond * Time.deltaTime);
-                }
-
-                yield return null;
-            }
+            // ✅ Çalışma süresi kadar bekle
+            yield return new WaitForSeconds(workoutTime);
 
             // Workout bitti
             animator.SetBool("isWorkingOut", false);
@@ -82,7 +81,6 @@ public class SimpleCustomerAI : MonoBehaviour
         if (GameManager.Instance != null)
         {
             GameManager.Instance.AddMoney(membershipFee); 
-            // Eğer mantığın "müşteri para ödüyor, kasadan düşüyor" ise burayı SpendMoney() yapabilirsin
         }
     }
 
@@ -101,12 +99,22 @@ public class SimpleCustomerAI : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
     }
 
-    // Tag ile sahnedeki tüm makinelerden rastgele seç
+    // ✅ Tag ile sahnedeki tüm makinelerden rastgele seç (kullanılmamış olanlardan)
     Transform GetRandomMachine()
     {
         GameObject[] machines = GameObject.FindGameObjectsWithTag("Machine");
-        if (machines.Length == 0) return null;
+        List<Transform> available = new List<Transform>();
 
-        return machines[Random.Range(0, machines.Length)].transform;
+        foreach (GameObject m in machines)
+        {
+            if (!usedMachines.Contains(m.transform))
+                available.Add(m.transform);
+        }
+
+        if (available.Count == 0) return null;
+
+        Transform chosen = available[Random.Range(0, available.Count)].transform;
+        usedMachines.Add(chosen); // ✅ Seçilen aleti kaydet
+        return chosen;
     }
 }

@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class BoxClick : MonoBehaviour
+public class BoxClick2 : MonoBehaviour
 {
     [Header("Prefab Settings")]
     public GameObject benchSetPrefab; // Gym BenchSet prefabı
@@ -61,7 +61,7 @@ public class BoxClick : MonoBehaviour
         }
         else
         {
-            spawnPos.y = groundY + 1f; // collider yoksa tahmini değer
+            spawnPos.y = groundY + 0.08f; // collider yoksa tahmini değer
         }
 
         GameObject spawned = Instantiate(benchSetPrefab, spawnPos, Quaternion.identity);
@@ -70,4 +70,3 @@ public class BoxClick : MonoBehaviour
         Destroy(gameObject);
     }
 }
-
