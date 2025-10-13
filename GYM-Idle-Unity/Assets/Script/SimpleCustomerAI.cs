@@ -47,11 +47,9 @@ public class SimpleCustomerAI : MonoBehaviour
                 Debug.Log($"{gameObject.name} artık çalışacak alet bulamadı, salonu terk ediyor!");
                 // ✅ Çıkış noktasına git (örnek: salonun kapısı)
                 yield return MoveToPoint(new Vector3(0, 0, 25f), 0f);
-
                 yield return MoveToPoint(new Vector3(20f, 0, 21f), 0f);
 
                 Destroy(gameObject);
-
                 yield break; // coroutine’i bitir
             }
 
@@ -118,5 +116,15 @@ public class SimpleCustomerAI : MonoBehaviour
         Transform chosen = available[Random.Range(0, available.Count)].transform;
         usedMachines.Add(chosen); // ✅ Seçilen aleti kaydet
         return chosen;
+    }
+
+    // ✅ SpawnManager’a haber verme
+    void OnDestroy()
+    {
+        SpawnManager manager = FindObjectOfType<SpawnManager>();
+        if (manager != null)
+        {
+            manager.RemoveCustomer(gameObject);
+        }
     }
 }

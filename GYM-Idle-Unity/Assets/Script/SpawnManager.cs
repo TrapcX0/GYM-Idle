@@ -6,6 +6,7 @@ public class SpawnManager : MonoBehaviour
 {
     [Header("Spawn Settings")]
     public Transform spawnPoint; // Karakterlerin çıkacağı nokta
+    public Transform targetPoint;
     public GameObject[] customerPrefabs; // Karakter prefabları
     public float spawnInterval = 5f; // Spawn aralığı (saniye)
     public int maxActiveCustomers = 7; // Aynı anda sahnede bulunacak maksimum müşteri
@@ -42,6 +43,14 @@ public class SpawnManager : MonoBehaviour
                 if (prefab != null)
                 {
                     GameObject newCustomer = Instantiate(prefab, spawnPoint.position, Quaternion.identity);
+
+                    // ✅ Spawn edilen müşterinin SimpleCustomerAI scriptine eriş
+                    SimpleCustomerAI ai = newCustomer.GetComponent<SimpleCustomerAI>();
+                    if (ai != null && targetPoint != null)
+                    {
+                        ai.targetPoint = targetPoint; // SpawnManager’daki targetPoint’i ata
+                    }
+
                     activeCustomers.Add(newCustomer);
                 }
                 else
@@ -53,10 +62,16 @@ public class SpawnManager : MonoBehaviour
             yield return new WaitForSeconds(spawnInterval);
         }
     }
-
     void CleanupDestroyedCustomers()
     {
         // Sahneden silinmiş objeleri listeden çıkar
         activeCustomers.RemoveAll(c => c == null);
+    }
+    public void RemoveCustomer(GameObject customer)
+    {
+        if (activeCustomers.Contains(customer))
+        {
+            activeCustomers.Remove(customer);
+        }
     }
 }
