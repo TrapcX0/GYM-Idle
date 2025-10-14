@@ -1,36 +1,53 @@
 using UnityEngine;
+using TMPro;
 using System.Collections;
 
 public class BoxClick : MonoBehaviour
 {
     [Header("Prefab Settings")]
-    public GameObject benchSetPrefab; // Gym BenchSet prefabı
+    public GameObject benchSetPrefab;
 
     [Header("Audio Settings")]
-    public AudioClip transformSound; // mp3 ses dosyası
+    public AudioClip transformSound;
     private AudioSource audioSource;
 
     [Header("Animation Settings")]
-    public Animator boxAnimator; // kutu Animator
+    public Animator boxAnimator;
+
+    [Header("Cost Settings")]
+    public int unlockCost = 100;
+    public TextMeshProUGUI costText; // TextMeshPro desteği
 
     private bool isTransformed = false;
 
     void Start()
     {
-        // Eğer objede AudioSource yoksa otomatik ekle
+        // AudioSource kontrolü
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
-        {
             audioSource = gameObject.AddComponent<AudioSource>();
-        }
         audioSource.playOnAwake = false;
+
+        // Fiyat yazısını göster
+        if (costText != null)
+            costText.text = unlockCost + " $";
     }
 
     void OnMouseDown()
     {
-        if (!isTransformed)
+        if (isTransformed) return;
+
+        // Para kontrolü
+        if (GameManager.Instance != null && GameManager.Instance.money >= unlockCost)
         {
+            GameManager.Instance.SpendMoney(unlockCost);
             StartCoroutine(TransformBox());
+        }
+        else
+        {
+            Debug.Log("Yetersiz bakiye!");
+            if (costText != null)
+                costText.text = "Yetersiz!";
         }
     }
 
@@ -38,36 +55,28 @@ public class BoxClick : MonoBehaviour
     {
         isTransformed = true;
 
-        // 1. Animasyonu çalıştır
+        // Animasyon
         if (boxAnimator != null)
             boxAnimator.SetTrigger("Open");
 
-        // 2. Sesi çal
+        // Ses
         if (transformSound != null)
             audioSource.PlayOneShot(transformSound);
 
-        // 3. Animasyonun süresini bekle (ör: 0.6 saniye)
+        // Bekleme
         yield return new WaitForSeconds(0.6f);
 
-        // 4. BenchSet prefabını oluştur (zemine oturt)
+        // Spawn pozisyonu hesapla
         Collider boxCollider = GetComponent<Collider>();
         Vector3 spawnPos = boxCollider.bounds.center;
 
-        float groundY = boxCollider.bounds.min.y; // kutunun alt yüzeyi
+        float groundY = boxCollider.bounds.min.y;
         Collider prefabCol = benchSetPrefab.GetComponent<Collider>();
-        if (prefabCol != null)
-        {
-            spawnPos.y = groundY + prefabCol.bounds.extents.y;
-        }
-        else
-        {
-            spawnPos.y = groundY + 1f; // collider yoksa tahmini değer
-        }
+        spawnPos.y = groundY + (prefabCol != null ? prefabCol.bounds.extents.y : 1f);
 
-        GameObject spawned = Instantiate(benchSetPrefab, spawnPos, Quaternion.identity);
+        Instantiate(benchSetPrefab, spawnPos, Quaternion.identity);
 
-        // 5. Kutuyu sil
+        // Kutuyu sil
         Destroy(gameObject);
     }
 }
-

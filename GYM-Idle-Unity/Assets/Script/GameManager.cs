@@ -3,6 +3,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [Header("Game Settings")]
+    public int money = 1000;
     public float startingMoney = 100f;
     public float currentMoney = 100f;
 
@@ -63,6 +64,12 @@ public class GameManager : MonoBehaviour
             return false;
         }
     }
+
+    public void SpendMoney(int amount)
+    {
+        money -= amount;
+    }
+
 
     public float GetMoney()
     {
