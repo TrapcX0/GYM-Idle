@@ -1,20 +1,22 @@
-**Gym Rat**, Unity oyun motoru kullanılarak geliştirilmiş eğlenceli ve bağımlılık yapan bir mobil Idle Oyun projesidir. Oyuncular, kendi spor salonlarını sıfırdan kurup geliştirerek en büyük fitness imparatorluğunu yaratmayı hedeflerler.
+Gym Rat is an engaging and highly addictive mobile Idle Game developed with the Unity game engine. Players are tasked with building their own gym from the ground up, with the ultimate goal of creating a massive fitness empire.
 
-## 🚀 Proje Hakkında
+🚀 About the Project
+This project was developed to apply practical skills in software architecture, collaborative teamwork, and game mechanics design. It heavily focuses on Idle mechanics, allowing players to continuously progress and generate revenue even while offline.
 
-Bu proje, yazılım mimarisi, takım çalışması ve oyun mekaniği tasarımı konularında pratik yapmak amacıyla geliştirilmiştir. Oyuncunun aktif olmadığı durumlarda (offline) bile ilerleme kaydetmesini sağlayan **Idle** mekaniklerine odaklanılmıştır.
+🎯 Key Features
+Advanced Idle Mechanics: The gym continues to generate income even when the player is not actively in the game.
 
-### 🎯 Temel Özellikler
+Box Cost System: A scalable system architecture that dynamically manages the pricing and upgrading of equipment and gym areas.
 
-* **Gelişmiş Idle Mekanikleri:** Oyuncu oyunda değilken bile spor salonu para kazandırmaya devam eder.
-* **Kasa ve Maliyet Sistemi (Box Cost System):** Ekipmanların ve alanların dinamik olarak fiyatlandırıldığı ve yükseltildiği ölçeklenebilir sistem mimarisi.
-* **Kat ve Alan Yönetimi (Floor Update):** Spor salonuna yeni katlar çıkarak ve yeni egzersiz alanları (koşu bandı, ağırlık istasyonları vb.) açarak salonu büyütme imkanı.
-* **Mobil Optimizasyon:** Mobil cihazlar için optimize edilmiş performans ve kullanıcı arayüzü (UI) tasarımı.
+Floor & Area Management (Floor Update): The ability to expand the facility by adding new floors and unlocking various exercise zones (e.g., treadmills, weight stations).
 
-## 🛠️ Kullanılan Teknolojiler ve Araçlar
+Mobile Optimization: Optimized performance and user interface (UI) design tailored specifically for mobile devices.
 
-* **Oyun Motoru:** Unity 3D
-* **Programlama Dili:** C# 
-* **Görsel ve Materyaller:** ShaderLab & HLSL
-* **Versiyon Kontrol:** Git & GitHub 
+🛠️ Technologies and Tools Used
+Game Engine: Unity 3D
 
+Programming Language: C#
+
+Visuals & Materials: ShaderLab & HLSL
+
+Version Control: Git & GitHub
